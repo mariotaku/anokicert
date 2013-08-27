@@ -47,7 +47,7 @@ public class BluetoothDevicesListAdapter extends BaseAdapter {
 	public Object getItem(final int position) {
 		final int paired_size = mPairedDevices.size(), searched_size = mSearchedDevices.size();
 		if (position == 0) return new Category(mContext.getString(R.string.paired_devices), false);
-		if (position == paired_size + 1) return new Category(mContext.getString(R.string.searched_devices), true);
+		if (position == paired_size + 1) return new Category(mContext.getString(R.string.available_devices), true);
 		if (paired_size > 0 && position > 0 && position < paired_size + 1) return mPairedDevices.get(position - 1);
 		if (searched_size > 0 && position > 1 + paired_size && position < 1 + paired_size + 1 + searched_size)
 			return mSearchedDevices.get(position - 1 - paired_size - 1);

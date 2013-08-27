@@ -109,29 +109,4 @@ public class NokiCertUtils {
 			return -1;
 	}
 
-	/**
-	 * Convert keyUsage type to human readable String
-	 * 
-	 * @param keyUsage the keyUsage type
-	 * @return the human readable keyUsage
-	 */
-	public static String keyUsageTypeToString(final int keyUsage) {
-		String output = "{";
-		if ((keyUsage & APPS_SIGNING) == APPS_SIGNING) {
-			output += "Apps. Signing, ";
-		}
-		if ((keyUsage & CROSS_CERTIFICATION) == CROSS_CERTIFICATION) {
-			output += "Cross Certification, ";
-		}
-		if ((keyUsage & SERVER_AUTHENTIC) == SERVER_AUTHENTIC) {
-			output += "Server authentic., ";
-		}
-		/*
-		 * remove the last ", " from the output string, needed because not all
-		 * are required
-		 */
-		output = output.substring(0, output.length() - 2);
-		output += "}";
-		return output;
-	}
 }
